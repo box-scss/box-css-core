@@ -1,0 +1,22 @@
+{
+  "name": "box-scss",
+  "version": "1.0.0",
+  "description": "CSS basics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/box-scss/master.git"
+  },
+  "keywords": [
+    "scss"
+  ],
+  "author": "cosmos-lab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cosmos-lab/skeleton-css/issues"
+  },
+  "homepage": "https://github.com/cosmos-lab/skeleton-css#readme"
+}

@@ -1,12 +1,12 @@
-@use "border.scss";
-@use "border-radius.scss";
-@use "display.scss";
-@use "flex.scss";
-@use "font.scss";
-@use "position.scss";
-@use "spacing.scss";
-@use "text-align.scss";
-@use "misc.scss";
+@use "styles/border.scss";
+@use "styles/border-radius.scss";
+@use "styles/display.scss";
+@use "styles/flex.scss";
+@use "styles/font.scss";
+@use "styles/position.scss";
+@use "styles/spacing.scss";
+@use "styles/text-align.scss";
+@use "styles/misc.scss";
 
 .pointer {
   cursor: pointer;

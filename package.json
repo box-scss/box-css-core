@@ -1,6 +1,6 @@
 {
   "name": "box-scss",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "CSS basics",
   "main": "index.js",
   "scripts": {

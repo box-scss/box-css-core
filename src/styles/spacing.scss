@@ -1,58 +1,94 @@
+/*
+  Abbreviations:
+  ma | pa = Margin | Padding all sides
+  ml | pl = Margin | Padding left
+  mt | pt = Margin | Padding top
+  mr | pr = Margin | Padding right
+  mb | pb = Margin | Padding bottom
+
+  h = Height
+  vh = Viewport height
+  w = Width
+  vw = Viewport width
+*/
+
 @use "variables.scss";
 
 $-sizes: (
-  "1": 0.25,
-  "2": 0.5,
-  "3": 0.75,
-  "4": 1,
-  "5": 2,
-  "6": 3,
-  "7": 4,
-  "8": 5,
+  "0": 0,
+  "1": 4,
+  "2": 8,
+  "3": 12,
+  "4": 16,
+  "5": 20,
+  "6": 24,
 );
 
 $-sides: variables.$sides;
 $-unit: variables.$unit;
 
 @each $size-key, $size in $-sizes {
+  //gap0, gap1, gap2 ...
+  .gap#{$size-key} {
+    gap: $size + $-unit;
+  }
+
+  //ma0, ma1, ma2 ...
   .ma#{$size-key} {
     margin: $size + $-unit;
   }
 
+  //mv0, mv1, mv2 ...
   .mv#{$size-key} {
     margin-top: $size + $-unit;
     margin-bottom: $size + $-unit;
   }
 
+  //mh0, mh1, mh2 ...
   .mh#{$size-key} {
     margin-left: $size + $-unit;
     margin-right: $size + $-unit;
   }
 
+  //ml0, mt0, mr0, mb0, ml1, mt2, mr3, mb4  ...
   @each $side-key, $side in $-sides {
     .m#{$side-key}#{$size-key} {
       margin-#{$side}: $size + $-unit;
     }
   }
 
+  //pa0, pa1, pa2 ...
   .pa#{$size-key} {
     padding: $size + $-unit;
   }
 
+  //pv0, pv1, pv2 ...
   .pv#{$size-key} {
     padding-top: $size + $-unit;
     padding-bottom: $size + $-unit;
   }
 
+  //ph0, ph1, ph2 ...
   .ph#{$size-key} {
     padding-left: $size + $-unit;
     padding-right: $size + $-unit;
   }
 
+  //pl0, pt0, pr0, pb0, pl1, pt2, pr3, pb4  ...
   @each $side-key, $side in $-sides {
     .p#{$side-key}#{$size-key} {
       padding-#{$side}: $size + $-unit;
     }
+  }
+
+  //h1, h2, h3 ... h6
+  .h#{$size-key} {
+    height: $size + $-unit;
+  }
+
+  //w1, w2, w3 ... w6
+  .w#{$size-key} {
+    width: $size + $-unit;
   }
 }
 
@@ -71,10 +107,67 @@ $-unit: variables.$unit;
 }
 
 @for $length from 100 through 10 {
+  //Height
+  //h10, h20, h30 ... h100
   .h#{$length} {
     height: $length * 1%;
   }
+
+  //h10-min, h20-min, h30-min ... h100-min
+  .h#{$length}-min {
+    min-height: $length * 1%;
+  }
+
+  //h10-max, h20-max, h30-max ... h100-max
+  .h#{$length}-max {
+    max-height: $length * 1%;
+  }
+
+  //Viewport height
+  //vh10, vh20, vh30 ... vh100
+  .vh#{$length} {
+    height: $length + vh;
+  }
+
+  //vh10-min, vh20-min, vh30-min ... vh100-min
+  .vh#{$length}-min {
+    min-height: $length + vh;
+  }
+
+  //vh10-max, vh20-max, vh30-max ... vh100-max
+  .vh#{$length}-max {
+    max-height: $length + vh;
+  }
+
+  //Width
+  //w10, w20, w30 ...
   .w#{$length} {
     width: $length * 1%;
+  }
+
+  //w10-min, w20-min, w30-min ... w100-min
+  .w#{$length}-min {
+    min-width: $length * 1%;
+  }
+
+  //w10-max, w20-max, w30-max ... w100-max
+  .w#{$length}-max {
+    max-width: $length * 1%;
+  }
+
+  //Viewport width
+  //vw10, vw20, vw30 ... vw100
+  .vw#{$length} {
+    width: $length + vw;
+  }
+
+  //vw10-min, vw20-min, vw30-min ... vw100-min
+  .vw#{$length}-min {
+    min-width: $length + vw;
+  }
+
+  //vw10-max, vw20-max, vw30-max ... vw100-max
+  .vw#{$length}-max {
+    max-width: $length + vw;
   }
 }

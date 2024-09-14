@@ -1,27 +1,38 @@
-.db {
-  display: block;
-}
-
-.dib {
-  display: inline-block;
-}
-
-.di {
-  display: inline;
-}
-
-.dgrid {
+.grid {
   display: grid;
 }
 
-.dt {
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.table {
   display: table;
 }
 
-.dtc {
+.table-cell {
   display: table-cell;
 }
 
-.dtr {
+.table-row {
   display: table-row;
+}
+
+.display-hover {
+  .child {
+    opacity: 0;
+  }
+  &:hover {
+    .child {
+      opacity: 1;
+    }
+  }
 }

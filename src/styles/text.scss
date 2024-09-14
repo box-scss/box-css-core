@@ -1,0 +1,35 @@
+/*
+  Abbreviations:
+  tl = Text align left
+  tc = Text align center
+  tr = Text align right
+  tj = Text align justify
+*/
+
+.tl {
+  text-align: left;
+}
+
+.tr {
+  text-align: right;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tj {
+  text-align: justify;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}

@@ -1,29 +1,73 @@
-.ba {
-  border-style: solid;
-  border-width: 1px;
+/*
+  Abbreviations:
+  bn = Border none
+  ba = Border all sides 
+  bl = Border left
+  bt = Border top
+  br = Border right
+  bb = Border bottom
+
+  rounded = Border Radius
+  rounded-tl = Border radius top left
+  rounded-tr = Border radius top right
+  rounded-bl = Border radius bottom left
+  rounded-br = Border radius bottom right
+*/
+
+@use "variables.scss";
+
+$-sizes: (
+  "0": 0,
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+);
+
+$-sides: variables.$sides;
+$-unit: variables.$unit;
+
+@each $size-key, $size in $-sizes {
+  //rounded1, rounded2, rounded3...
+  .rounded#{$size-key} {
+    border-radius: $size + $-unit;
+  }
 }
 
-.bt {
-  border-top-style: solid;
-  border-top-width: 1px;
+.rounded-pill {
+  border-radius: 9999px;
 }
 
-.br {
-  border-right-style: solid;
-  border-right-width: 1px;
+.rounded-tl0 {
+  border-top-left-radius: 0;
 }
 
-.bb {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+.rounded-tr0 {
+  border-top-right-radius: 0;
 }
 
-.bl {
-  border-left-style: solid;
-  border-left-width: 1px;
+.rounded-bl0 {
+  border-bottom-left-radius: 0;
+}
+
+.rounded-br0 {
+  border-bottom-right-radius: 0;
 }
 
 .bn {
   border-style: none;
   border-width: 0;
+}
+
+.ba {
+  border-style: solid;
+  border-width: 1px;
+}
+
+@each $side-key, $side in $-sides {
+  //bt, br, bb, bl
+  .b#{$side-key} {
+    border-#{$side}-style: solid;
+    border-#{$side}-width: 1px;
+  }
 }

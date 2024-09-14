@@ -23,6 +23,7 @@
 $-sides: variables.$sides;
 
 @each $side-key, $side in $-sides {
+  //top0, right0, bottom0, left0
   .#{$side}0 {
     #{$side}: 0;
   }
@@ -34,4 +35,14 @@ $-sides: variables.$sides;
 
 .zmax {
   z-index: 2147483647;
+}
+
+.centerh {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.centerv {
+  top: 50%;
+  transform: translateY(-50%);
 }
